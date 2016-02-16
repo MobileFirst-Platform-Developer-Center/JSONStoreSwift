@@ -1,0 +1,619 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		476141653A0B87326E0C353D /* Pods_JSONStoreiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C9ABE58F5C43287D036D1A5 /* Pods_JSONStoreiOS.framework */; };
+		CE0BE30A1C6160BE00B04F21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0BE3091C6160BE00B04F21 /* AppDelegate.swift */; };
+		CE0BE30C1C6160BE00B04F21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0BE30B1C6160BE00B04F21 /* ViewController.swift */; };
+		CE0BE30F1C6160BE00B04F21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0BE30D1C6160BE00B04F21 /* Main.storyboard */; };
+		CE0BE3111C6160BE00B04F21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0BE3101C6160BE00B04F21 /* Assets.xcassets */; };
+		CE0BE3141C6160BE00B04F21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0BE3121C6160BE00B04F21 /* LaunchScreen.storyboard */; };
+		CE0BE31F1C6160BE00B04F21 /* JSONStoreiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0BE31E1C6160BE00B04F21 /* JSONStoreiOSTests.swift */; };
+		CE0BE32A1C6160BE00B04F21 /* JSONStoreiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0BE3291C6160BE00B04F21 /* JSONStoreiOSUITests.swift */; };
+		CE6744681C73AB1B00A95722 /* mfpclient.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE6744671C73AB1B00A95722 /* mfpclient.plist */; };
+		CE67446B1C73E3C900A95722 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6744691C73E3C900A95722 /* iPad.storyboard */; };
+		CEAA08251C728C1C0050BDEA /* PushDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAA08241C728C1C0050BDEA /* PushDelegate.swift */; };
+		CEAA08271C728D3B0050BDEA /* LoadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAA08261C728D3B0050BDEA /* LoadDelegate.swift */; };
+		CEAB00C61C7128DF001647AA /* StringResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB00C51C7128DF001647AA /* StringResource.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CE0BE31B1C6160BE00B04F21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE0BE2FE1C6160BE00B04F21 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE0BE3051C6160BE00B04F21;
+			remoteInfo = JSONStoreiOS;
+		};
+		CE0BE3261C6160BE00B04F21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE0BE2FE1C6160BE00B04F21 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE0BE3051C6160BE00B04F21;
+			remoteInfo = JSONStoreiOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		20C37907AFF8F5BEED437FF3 /* Pods-JSONStoreiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONStoreiOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JSONStoreiOS/Pods-JSONStoreiOS.debug.xcconfig"; sourceTree = "<group>"; };
+		3C9ABE58F5C43287D036D1A5 /* Pods_JSONStoreiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JSONStoreiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F9E5E8886B24012E0A6F264 /* Pods-JSONStoreiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONStoreiOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-JSONStoreiOS/Pods-JSONStoreiOS.release.xcconfig"; sourceTree = "<group>"; };
+		CE0BE3061C6160BE00B04F21 /* JSONStoreiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSONStoreiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE0BE3091C6160BE00B04F21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CE0BE30B1C6160BE00B04F21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CE0BE30E1C6160BE00B04F21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CE0BE3101C6160BE00B04F21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE0BE3131C6160BE00B04F21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CE0BE3151C6160BE00B04F21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE0BE31A1C6160BE00B04F21 /* JSONStoreiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSONStoreiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE0BE31E1C6160BE00B04F21 /* JSONStoreiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONStoreiOSTests.swift; sourceTree = "<group>"; };
+		CE0BE3201C6160BE00B04F21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE0BE3251C6160BE00B04F21 /* JSONStoreiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSONStoreiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE0BE3291C6160BE00B04F21 /* JSONStoreiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONStoreiOSUITests.swift; sourceTree = "<group>"; };
+		CE0BE32B1C6160BE00B04F21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE2AE5D11C6161B500CBD079 /* BridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		CE6744671C73AB1B00A95722 /* mfpclient.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mfpclient.plist; sourceTree = "<group>"; };
+		CE67446A1C73E3C900A95722 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/iPad.storyboard; sourceTree = "<group>"; };
+		CEAA08241C728C1C0050BDEA /* PushDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushDelegate.swift; sourceTree = "<group>"; };
+		CEAA08261C728D3B0050BDEA /* LoadDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadDelegate.swift; sourceTree = "<group>"; };
+		CEAB00C51C7128DF001647AA /* StringResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringResource.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE0BE3031C6160BE00B04F21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				476141653A0B87326E0C353D /* Pods_JSONStoreiOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE0BE3171C6160BE00B04F21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE0BE3221C6160BE00B04F21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		77AA1D46A49337215177ED49 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				20C37907AFF8F5BEED437FF3 /* Pods-JSONStoreiOS.debug.xcconfig */,
+				6F9E5E8886B24012E0A6F264 /* Pods-JSONStoreiOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CE0BE2FD1C6160BE00B04F21 = {
+			isa = PBXGroup;
+			children = (
+				CE0BE3081C6160BE00B04F21 /* JSONStoreiOS */,
+				CE0BE31D1C6160BE00B04F21 /* JSONStoreiOSTests */,
+				CE0BE3281C6160BE00B04F21 /* JSONStoreiOSUITests */,
+				CE0BE3071C6160BE00B04F21 /* Products */,
+				77AA1D46A49337215177ED49 /* Pods */,
+				E3D748D280A07E146BC14DA9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CE0BE3071C6160BE00B04F21 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE0BE3061C6160BE00B04F21 /* JSONStoreiOS.app */,
+				CE0BE31A1C6160BE00B04F21 /* JSONStoreiOSTests.xctest */,
+				CE0BE3251C6160BE00B04F21 /* JSONStoreiOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE0BE3081C6160BE00B04F21 /* JSONStoreiOS */ = {
+			isa = PBXGroup;
+			children = (
+				CE6744671C73AB1B00A95722 /* mfpclient.plist */,
+				CE0BE3091C6160BE00B04F21 /* AppDelegate.swift */,
+				CE0BE30B1C6160BE00B04F21 /* ViewController.swift */,
+				CEAB00C51C7128DF001647AA /* StringResource.swift */,
+				CEAA08241C728C1C0050BDEA /* PushDelegate.swift */,
+				CEAA08261C728D3B0050BDEA /* LoadDelegate.swift */,
+				CE0BE30D1C6160BE00B04F21 /* Main.storyboard */,
+				CE6744691C73E3C900A95722 /* iPad.storyboard */,
+				CE0BE3101C6160BE00B04F21 /* Assets.xcassets */,
+				CE0BE3121C6160BE00B04F21 /* LaunchScreen.storyboard */,
+				CE0BE3151C6160BE00B04F21 /* Info.plist */,
+				CE2AE5D11C6161B500CBD079 /* BridgingHeader.h */,
+			);
+			path = JSONStoreiOS;
+			sourceTree = "<group>";
+		};
+		CE0BE31D1C6160BE00B04F21 /* JSONStoreiOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				CE0BE31E1C6160BE00B04F21 /* JSONStoreiOSTests.swift */,
+				CE0BE3201C6160BE00B04F21 /* Info.plist */,
+			);
+			path = JSONStoreiOSTests;
+			sourceTree = "<group>";
+		};
+		CE0BE3281C6160BE00B04F21 /* JSONStoreiOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CE0BE3291C6160BE00B04F21 /* JSONStoreiOSUITests.swift */,
+				CE0BE32B1C6160BE00B04F21 /* Info.plist */,
+			);
+			path = JSONStoreiOSUITests;
+			sourceTree = "<group>";
+		};
+		E3D748D280A07E146BC14DA9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C9ABE58F5C43287D036D1A5 /* Pods_JSONStoreiOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE0BE3051C6160BE00B04F21 /* JSONStoreiOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE0BE32E1C6160BE00B04F21 /* Build configuration list for PBXNativeTarget "JSONStoreiOS" */;
+			buildPhases = (
+				B9D306B105587FE17E143350 /* Check Pods Manifest.lock */,
+				CE0BE3021C6160BE00B04F21 /* Sources */,
+				CE0BE3031C6160BE00B04F21 /* Frameworks */,
+				CE0BE3041C6160BE00B04F21 /* Resources */,
+				E98E2A294499CEFEBCB39E7B /* Embed Pods Frameworks */,
+				88D1372EB4008B603CC57156 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JSONStoreiOS;
+			productName = JSONStoreiOS;
+			productReference = CE0BE3061C6160BE00B04F21 /* JSONStoreiOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CE0BE3191C6160BE00B04F21 /* JSONStoreiOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE0BE3311C6160BE00B04F21 /* Build configuration list for PBXNativeTarget "JSONStoreiOSTests" */;
+			buildPhases = (
+				CE0BE3161C6160BE00B04F21 /* Sources */,
+				CE0BE3171C6160BE00B04F21 /* Frameworks */,
+				CE0BE3181C6160BE00B04F21 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE0BE31C1C6160BE00B04F21 /* PBXTargetDependency */,
+			);
+			name = JSONStoreiOSTests;
+			productName = JSONStoreiOSTests;
+			productReference = CE0BE31A1C6160BE00B04F21 /* JSONStoreiOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CE0BE3241C6160BE00B04F21 /* JSONStoreiOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE0BE3341C6160BE00B04F21 /* Build configuration list for PBXNativeTarget "JSONStoreiOSUITests" */;
+			buildPhases = (
+				CE0BE3211C6160BE00B04F21 /* Sources */,
+				CE0BE3221C6160BE00B04F21 /* Frameworks */,
+				CE0BE3231C6160BE00B04F21 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE0BE3271C6160BE00B04F21 /* PBXTargetDependency */,
+			);
+			name = JSONStoreiOSUITests;
+			productName = JSONStoreiOSUITests;
+			productReference = CE0BE3251C6160BE00B04F21 /* JSONStoreiOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE0BE2FE1C6160BE00B04F21 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Yoel Nunez";
+				TargetAttributes = {
+					CE0BE3051C6160BE00B04F21 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					CE0BE3191C6160BE00B04F21 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = CE0BE3051C6160BE00B04F21;
+					};
+					CE0BE3241C6160BE00B04F21 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = CE0BE3051C6160BE00B04F21;
+					};
+				};
+			};
+			buildConfigurationList = CE0BE3011C6160BE00B04F21 /* Build configuration list for PBXProject "JSONStoreiOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CE0BE2FD1C6160BE00B04F21;
+			productRefGroup = CE0BE3071C6160BE00B04F21 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE0BE3051C6160BE00B04F21 /* JSONStoreiOS */,
+				CE0BE3191C6160BE00B04F21 /* JSONStoreiOSTests */,
+				CE0BE3241C6160BE00B04F21 /* JSONStoreiOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE0BE3041C6160BE00B04F21 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE0BE3141C6160BE00B04F21 /* LaunchScreen.storyboard in Resources */,
+				CE0BE3111C6160BE00B04F21 /* Assets.xcassets in Resources */,
+				CE0BE30F1C6160BE00B04F21 /* Main.storyboard in Resources */,
+				CE6744681C73AB1B00A95722 /* mfpclient.plist in Resources */,
+				CE67446B1C73E3C900A95722 /* iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE0BE3181C6160BE00B04F21 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE0BE3231C6160BE00B04F21 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		88D1372EB4008B603CC57156 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JSONStoreiOS/Pods-JSONStoreiOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9D306B105587FE17E143350 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E98E2A294499CEFEBCB39E7B /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JSONStoreiOS/Pods-JSONStoreiOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE0BE3021C6160BE00B04F21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEAA08251C728C1C0050BDEA /* PushDelegate.swift in Sources */,
+				CE0BE30C1C6160BE00B04F21 /* ViewController.swift in Sources */,
+				CEAA08271C728D3B0050BDEA /* LoadDelegate.swift in Sources */,
+				CEAB00C61C7128DF001647AA /* StringResource.swift in Sources */,
+				CE0BE30A1C6160BE00B04F21 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE0BE3161C6160BE00B04F21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE0BE31F1C6160BE00B04F21 /* JSONStoreiOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE0BE3211C6160BE00B04F21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE0BE32A1C6160BE00B04F21 /* JSONStoreiOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CE0BE31C1C6160BE00B04F21 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE0BE3051C6160BE00B04F21 /* JSONStoreiOS */;
+			targetProxy = CE0BE31B1C6160BE00B04F21 /* PBXContainerItemProxy */;
+		};
+		CE0BE3271C6160BE00B04F21 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE0BE3051C6160BE00B04F21 /* JSONStoreiOS */;
+			targetProxy = CE0BE3261C6160BE00B04F21 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CE0BE30D1C6160BE00B04F21 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE0BE30E1C6160BE00B04F21 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CE0BE3121C6160BE00B04F21 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE0BE3131C6160BE00B04F21 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CE6744691C73E3C900A95722 /* iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE67446A1C73E3C900A95722 /* Base */,
+			);
+			name = iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CE0BE32C1C6160BE00B04F21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CE0BE32D1C6160BE00B04F21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE0BE32F1C6160BE00B04F21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20C37907AFF8F5BEED437FF3 /* Pods-JSONStoreiOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JSONStoreiOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.mobilefirst.JSONStoreiOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/JSONStoreiOS/BridgingHeader.h";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		CE0BE3301C6160BE00B04F21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F9E5E8886B24012E0A6F264 /* Pods-JSONStoreiOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JSONStoreiOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.mobilefirst.JSONStoreiOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/JSONStoreiOS/BridgingHeader.h";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		CE0BE3321C6160BE00B04F21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = JSONStoreiOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.mobilefirst.JSONStoreiOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JSONStoreiOS.app/JSONStoreiOS";
+			};
+			name = Debug;
+		};
+		CE0BE3331C6160BE00B04F21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = JSONStoreiOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.mobilefirst.JSONStoreiOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JSONStoreiOS.app/JSONStoreiOS";
+			};
+			name = Release;
+		};
+		CE0BE3351C6160BE00B04F21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = JSONStoreiOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.mobilefirst.JSONStoreiOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = JSONStoreiOS;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		CE0BE3361C6160BE00B04F21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = JSONStoreiOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.mobilefirst.JSONStoreiOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = JSONStoreiOS;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE0BE3011C6160BE00B04F21 /* Build configuration list for PBXProject "JSONStoreiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE0BE32C1C6160BE00B04F21 /* Debug */,
+				CE0BE32D1C6160BE00B04F21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE0BE32E1C6160BE00B04F21 /* Build configuration list for PBXNativeTarget "JSONStoreiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE0BE32F1C6160BE00B04F21 /* Debug */,
+				CE0BE3301C6160BE00B04F21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE0BE3311C6160BE00B04F21 /* Build configuration list for PBXNativeTarget "JSONStoreiOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE0BE3321C6160BE00B04F21 /* Debug */,
+				CE0BE3331C6160BE00B04F21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE0BE3341C6160BE00B04F21 /* Build configuration list for PBXNativeTarget "JSONStoreiOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE0BE3351C6160BE00B04F21 /* Debug */,
+				CE0BE3361C6160BE00B04F21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CE0BE2FE1C6160BE00B04F21 /* Project object */;
+}
