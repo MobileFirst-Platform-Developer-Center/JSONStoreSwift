@@ -374,17 +374,17 @@ class ViewController: UIViewController {
             return
         }
         
-        let document = NSMutableDictionary()
+        var document:Dictionary<String,AnyObject> = Dictionary()
         document["name"] = name
         document["age"] = age?.description
         
         
-        let replace = NSMutableDictionary()
-        replace["_id"] = id
-        replace["json"] = document
+        var replacement:Dictionary<String,AnyObject> = Dictionary()
+        replacement["_id"] = id
+        replacement["json"] = document
 
         do {
-            let count:Int = try Int(people.replaceDocuments([replace], andMarkDirty: true))
+            let count:Int = try Int(people.replaceDocuments([replacement], andMarkDirty: true))
 
             if(count > 0) {
                 logMessage(String.init(format: StringResource.REPLACE_MESSAGE, arguments: [id!]))

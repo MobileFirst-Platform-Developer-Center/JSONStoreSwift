@@ -26,7 +26,7 @@ class LoadDelegate: NSObject, WLDelegate {
     func onSuccess(response: WLResponse!) {
         let responsePayload:NSDictionary = response.getResponseJson()
         
-        controller!.loadDataFromAdapter(responsePayload.objectForKey("people") as! NSArray)
+        controller!.loadDataFromAdapter(responsePayload.objectForKey("peopleList") as! NSArray)
     }
     
     func onFailure(response: WLFailResponse!) {
