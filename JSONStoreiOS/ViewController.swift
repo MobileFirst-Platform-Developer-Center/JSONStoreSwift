@@ -429,7 +429,7 @@ class ViewController: UIViewController {
             return logError(StringResource.INIT_FIRST_MESSAGE)
         }
         
-        let pull = WLResourceRequest(URL: NSURL(string: "/adapters/People/getPeople"), method: "GET")
+        let pull = WLResourceRequest(URL: NSURL(string: "/adapters/JSONStoreAdapter/getPeople"), method: "GET")
         
         pull.sendWithDelegate(loadDelegate)
     }
@@ -463,7 +463,7 @@ class ViewController: UIViewController {
             pushDelegate.setDataList(dirtyDocs)
             
             
-            let push = WLResourceRequest(URL: NSURL(string: "/adapters/People/pushPeople"), method: "POST")
+            let push = WLResourceRequest(URL: NSURL(string: "/adapters/JSONStoreAdapter/pushPeople"), method: "POST")
             push.sendWithData(pushData, delegate: pushDelegate)
             
         } catch let error as NSError {
