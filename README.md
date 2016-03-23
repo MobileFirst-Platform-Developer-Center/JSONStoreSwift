@@ -7,7 +7,14 @@ An application demonstrating various JSONStore APIs in Swift for iOS
 https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/using-the-mfpf-sdk/jsonstore-ios/
 
 ### Usage
-This application uses CocoaPods to manage the framework dependencies. To run it run `pod install` in the root directory of the project and open `[ProjectName].xcworkspace`. For more info view [Adding the MobileFirst Platform Foundation SDK to iOS Applications](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/adding-the-mfpf-sdk/ios/)
+
+1. Use either Maven or MobileFirst Developer CLI to [build and deploy the adapter](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/adapters/creating-adapters/).
+2. From the command-line, navigate to the project's root folder.
+3. Download the CocoaPod dependencies by running the command: `pod install`
+4. Ensure the sample is registered in the MobileFirst Server by running the command: `mfpdev app register`
+5. Open `JSONStoreiOS.xcworkspace` and run the sample by clicking the **Run** button.
+
+JSONStore adapter: https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAdapter/tree/release80
 
 ### Supported Levels
 IBM MobileFirst Platform Foundation 8.0
