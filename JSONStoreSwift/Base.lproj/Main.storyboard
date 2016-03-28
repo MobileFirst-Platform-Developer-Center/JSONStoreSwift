@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="JSONStoreiOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleAspectFill" id="yyO-4Z-AM6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="console:" translatesAutoresizingMaskIntoConstraints="NO" id="Vdk-LD-JRe">
+                                <rect key="frame" x="0.0" y="624" width="414" height="112"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="112" id="q7J-Pg-aW3"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AuO-Bs-co0">
+                                <rect key="frame" x="48" y="64" width="318" height="560"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sbd-sJ-3Ye">
+                                        <rect key="frame" x="0.0" y="0.0" width="318" height="1086"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User (optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oyg-rI-xke">
+                                                <rect key="frame" x="8" y="12" width="147" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="147" id="tN7-DR-VIE"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pass (optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bb1-V0-hGh">
+                                                <rect key="frame" x="163" y="12" width="147" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Obc-jV-CZn">
+                                                <rect key="frame" x="8" y="50" width="302" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Initialize (Login/Open)">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="initializeButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w8U-DT-5WD"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lkP-hb-goX">
+                                                <rect key="frame" x="8" y="88" width="302" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Close All (Logout)">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="closeButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SRn-nX-7n1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Et9-FY-1qY">
+                                                <rect key="frame" x="8" y="126" width="302" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Destroy Evertyhing">
+                                                    <color key="titleColor" red="1" green="0.96126666559999996" blue="0.97632513750000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="destroyButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dug-MX-XdV"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atT-Iw-bu4">
+                                                <rect key="frame" x="8" y="164" width="302" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Remove Collection">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="removeCollectionButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ddl-KT-QH3"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w3a-kV-Nnz">
+                                                <rect key="frame" x="8" y="202" width="302" height="1"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="l65-oR-Fh0"/>
+                                                </constraints>
+                                            </view>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sl2-QA-egE">
+                                                <rect key="frame" x="8" y="210" width="147" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Age" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wiq-s1-qHS">
+                                                <rect key="frame" x="163" y="210" width="147" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2e-Fz-We7">
+                                                <rect key="frame" x="8" y="248" width="302" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Add Data">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="addDataButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fyC-yg-fKV"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="erL-fN-rUp">
+                                                <rect key="frame" x="8" y="286" width="302" height="1"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="cho-sC-dKh"/>
+                                                </constraints>
+                                            </view>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Field" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qmZ-eo-YQE">
+                                                <rect key="frame" x="8" y="295" width="302" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Limit (optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7e4-gg-Mnl">
+                                                <rect key="frame" x="8" y="333" width="147" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Offset (optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CFt-Qg-0Dc">
+                                                <rect key="frame" x="163" y="333" width="147" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qn6-9s-MdE">
+                                                <rect key="frame" x="8" y="371" width="302" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Find By Name (Fuzzy Search)">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="findByNameButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4pk-e1-ULq"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ioP-YT-hJv">
+                                                <rect key="frame" x="8" y="409" width="302" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Find By Age (Exact Search)">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="findByAgeButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ce3-aN-xpE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yn1-Li-t0K">
+                                                <rect key="frame" x="8" y="447" width="302" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Find All">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="findAllButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I9s-x2-smE"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FOK-Ms-U1f">
+                                                <rect key="frame" x="8" y="488" width="302" height="1"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="Ulf-AH-QiF"/>
+                                                </constraints>
+                                            </view>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Id" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WCh-TV-8cn">
+                                                <rect key="frame" x="8" y="499" width="147" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3xM-Ec-g5S">
+                                                <rect key="frame" x="163" y="499" width="147" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Find (by id)">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="findByIdButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sRE-BM-IUm"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wLb-mc-1vu">
+                                                <rect key="frame" x="8" y="540" width="302" height="1"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="1UK-Lp-Eef"/>
+                                                </constraints>
+                                            </view>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yL6-4z-1rZ">
+                                                <rect key="frame" x="8" y="551" width="147" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Age" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aWK-9X-0rR">
+                                                <rect key="frame" x="163" y="551" width="147" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Id" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vBs-7x-Bgy">
+                                                <rect key="frame" x="8" y="591" width="147" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZl-XT-vwV">
+                                                <rect key="frame" x="163" y="591" width="147" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Replace (by id)">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="replaceByIdButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dbN-fj-r3x"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fvr-WT-ZKL">
+                                                <rect key="frame" x="8" y="631" width="302" height="1"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="ZM5-7n-Xpn"/>
+                                                </constraints>
+                                            </view>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Id" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W7M-FS-afB">
+                                                <rect key="frame" x="8" y="642" width="147" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9o-Af-V2Z">
+                                                <rect key="frame" x="163" y="642" width="147" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Remove (by id)">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="removeByIdButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p6s-ac-9l3"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v9M-1X-VUT">
+                                                <rect key="frame" x="8" y="682" width="302" height="1"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="rHs-LM-U2s"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13k-FB-8LT">
+                                                <rect key="frame" x="8" y="692" width="302" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Load Data From Adapter">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="loadDataFromAdapterButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tvL-sW-YRt"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cX2-gb-t8Q">
+                                                <rect key="frame" x="8" y="732" width="302" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Get Dirty Documents">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="getDirtyDocumentsButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aaa-Z6-7tq"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOg-Aw-aqH">
+                                                <rect key="frame" x="8" y="772" width="302" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Push Changes to Adapter">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pushChangesToAdapterButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Iq9-u2-aPv"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hjT-vh-Q0H">
+                                                <rect key="frame" x="8" y="812" width="302" height="1"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="tRE-fc-pnG"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zki-kP-Mwz">
+                                                <rect key="frame" x="8" y="822" width="302" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Count All">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="countAllButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MO3-PM-Jrd"/>
+                                                </connections>
+                                            </button>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name to Count" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yY1-qF-EN3">
+                                                <rect key="frame" x="8" y="862" width="302" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5hx-bu-QIp">
+                                                <rect key="frame" x="8" y="902" width="302" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Count By Name">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="countByNameButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2XB-JB-PyG"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="994-KN-jnM">
+                                                <rect key="frame" x="8" y="942" width="302" height="1"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="kNb-YL-Wyc"/>
+                                                </constraints>
+                                            </view>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Old Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yca-5I-JDP">
+                                                <rect key="frame" x="8" y="952" width="147" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6rn-65-nNm">
+                                                <rect key="frame" x="163" y="952" width="147" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User (optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y38-E2-xwG">
+                                                <rect key="frame" x="8" y="992" width="147" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Dv-Ey-L9I">
+                                                <rect key="frame" x="163" y="992" width="147" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Change Password">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="changePasswordButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e4c-KT-YcW"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Aj-ZK-t61">
+                                                <rect key="frame" x="8" y="1032" width="302" height="1"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="QrM-T4-eMw"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lf4-hu-vZL">
+                                                <rect key="frame" x="8" y="1042" width="302" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Get FileInfo">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="getFileInfoButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2dL-Le-oeO"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="sbd-sJ-3Ye" firstAttribute="leading" secondItem="AuO-Bs-co0" secondAttribute="leading" id="D7n-02-RYG"/>
+                                    <constraint firstAttribute="bottom" secondItem="sbd-sJ-3Ye" secondAttribute="bottom" id="Y7g-G8-n0h"/>
+                                    <constraint firstItem="sbd-sJ-3Ye" firstAttribute="top" secondItem="AuO-Bs-co0" secondAttribute="top" id="mAY-TT-k23"/>
+                                    <constraint firstAttribute="trailing" secondItem="sbd-sJ-3Ye" secondAttribute="trailing" id="oeI-YD-40r"/>
+                                </constraints>
+                            </scrollView>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xbm-Mi-vmn">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="JSONStore Native iOS" id="59J-MH-vDz"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Vdk-LD-JRe" secondAttribute="bottom" id="3rA-U6-Vpb"/>
+                            <constraint firstItem="Vdk-LD-JRe" firstAttribute="leading" secondItem="yyO-4Z-AM6" secondAttribute="leadingMargin" constant="-20" id="G78-pk-m79"/>
+                            <constraint firstItem="AuO-Bs-co0" firstAttribute="top" secondItem="Xbm-Mi-vmn" secondAttribute="bottom" id="Pxg-n0-lXg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vdk-LD-JRe" secondAttribute="trailing" constant="-20" id="eiY-kY-YmT"/>
+                            <constraint firstItem="AuO-Bs-co0" firstAttribute="centerX" secondItem="Vdk-LD-JRe" secondAttribute="centerX" id="jh6-sT-PGP"/>
+                            <constraint firstItem="AuO-Bs-co0" firstAttribute="bottom" secondItem="yyO-4Z-AM6" secondAttribute="baseline" constant="-112" id="uCe-BC-uyw"/>
+                            <constraint firstItem="AuO-Bs-co0" firstAttribute="top" secondItem="yyO-4Z-AM6" secondAttribute="top" constant="64" id="uCe-BC-uywe"/>
+                            <constraint firstItem="AuO-Bs-co0" firstAttribute="centerX" secondItem="Xbm-Mi-vmn" secondAttribute="centerX" id="uhE-S6-bVS"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="changePasswordNewTextField" destination="6rn-65-nNm" id="NZO-st-UVv"/>
+                        <outlet property="changePasswordOldTextField" destination="yca-5I-JDP" id="T4I-Hp-sNq"/>
+                        <outlet property="changePasswordUserTextField" destination="Y38-E2-xwG" id="bSM-8U-Yo0"/>
+                        <outlet property="consoleTextView" destination="Vdk-LD-JRe" id="5Uo-4h-KOM"/>
+                        <outlet property="countNameTextField" destination="yY1-qF-EN3" id="6ky-Lt-1Ea"/>
+                        <outlet property="enterAgeTextField" destination="Wiq-s1-qHS" id="F69-sB-fGo"/>
+                        <outlet property="enterNameTextField" destination="sl2-QA-egE" id="jLm-go-f43"/>
+                        <outlet property="findByIdTextField" destination="WCh-TV-8cn" id="TB8-ms-Gly"/>
+                        <outlet property="limitTextField" destination="7e4-gg-Mnl" id="BIx-bD-1qj"/>
+                        <outlet property="offsetTextField" destination="CFt-Qg-0Dc" id="2vW-BP-yxd"/>
+                        <outlet property="passwordTextField" destination="bb1-V0-hGh" id="kqw-qL-roA"/>
+                        <outlet property="removeIdTextField" destination="W7M-FS-afB" id="g2G-dE-fco"/>
+                        <outlet property="replaceAgeTextField" destination="aWK-9X-0rR" id="CED-i9-GQC"/>
+                        <outlet property="replaceIdTextField" destination="vBs-7x-Bgy" id="qnh-YP-EpR"/>
+                        <outlet property="replaceNameTextField" destination="yL6-4z-1rZ" id="fWK-6U-bkd"/>
+                        <outlet property="searchTextField" destination="qmZ-eo-YQE" id="itk-wN-sFp"/>
+                        <outlet property="userTextField" destination="oyg-rI-xke" id="fXh-Eo-bAt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="303"/>
+        </scene>
+    </scenes>
+</document>

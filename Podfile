@@ -1,13 +1,13 @@
 use_frameworks!
 
-target 'JSONStoreiOS' do
+target 'JSONStoreSwift' do
     pod 'IBMMobileFirstPlatformFoundationJSONStore', '~> 8.0.0'
 end
 
-target 'JSONStoreiOSTests' do
+target 'JSONStoreSwiftTests' do
 
 end
 
-target 'JSONStoreiOSUITests' do
+target 'JSONStoreSwiftUITests' do
 
 end

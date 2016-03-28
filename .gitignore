@@ -1,7 +1,3 @@
-# CocoaPods
-Pods/
-*.lock
-
 # Xcode
 .xcuserstate
 project.xcworkspace/

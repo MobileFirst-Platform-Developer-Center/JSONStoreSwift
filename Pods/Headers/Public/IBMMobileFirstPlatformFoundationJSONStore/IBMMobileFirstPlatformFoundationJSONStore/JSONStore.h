@@ -1,0 +1,1 @@
+../../../../IBMMobileFirstPlatformFoundationJSONStore/IBMMobileFirstPlatformFoundationJSONStore/Frameworks/IBMMobileFirstPlatformFoundationJSONStore.framework/Headers/JSONStore.h

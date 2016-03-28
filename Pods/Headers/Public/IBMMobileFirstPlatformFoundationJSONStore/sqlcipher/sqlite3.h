@@ -1,0 +1,1 @@
+../../../../IBMMobileFirstPlatformFoundationJSONStore/IBMMobileFirstPlatformFoundationJSONStore/Frameworks/sqlcipher.framework/Headers/sqlite3.h

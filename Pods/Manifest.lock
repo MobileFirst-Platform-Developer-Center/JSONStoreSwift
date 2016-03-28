@@ -1,0 +1,16 @@
+PODS:
+  - IBMMobileFirstPlatformFoundation (8.0.157)
+  - IBMMobileFirstPlatformFoundationJSONStore (8.0.157):
+    - IBMMobileFirstPlatformFoundation (~> 8.0)
+    - IBMMobileFirstPlatformFoundationOpenSSLUtils (~> 8.0)
+  - IBMMobileFirstPlatformFoundationOpenSSLUtils (8.0.157)
+
+DEPENDENCIES:
+  - IBMMobileFirstPlatformFoundationJSONStore (~> 8.0.0)
+
+SPEC CHECKSUMS:
+  IBMMobileFirstPlatformFoundation: 79376d7df8c1e775b0f3456083d2bda92934ec6d
+  IBMMobileFirstPlatformFoundationJSONStore: 227c197ad3223394b37d199c80c43f719e85a8d2
+  IBMMobileFirstPlatformFoundationOpenSSLUtils: ba9616ec7409952a9415674d3c1cf50b9e28e19a
+
+COCOAPODS: 0.39.0
