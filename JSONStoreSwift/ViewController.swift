@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 import UIKit
+import IBMMobileFirstPlatformFoundation
 
 class ViewController: UIViewController {
     
     var people:JSONStoreCollection!
-    var pushDelegate:PushDelegate!
-    var loadDelegate:LoadDelegate!
+    //var pushDelegate:PushDelegate!
+    //var loadDelegate:LoadDelegate!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +29,8 @@ class ViewController: UIViewController {
         consoleTextView.editable = false
         
         
-        pushDelegate = PushDelegate(controller: self)
-        loadDelegate = LoadDelegate(controller: self)
+        //pushDelegate = PushDelegate(controller: self)
+        //loadDelegate = LoadDelegate(controller: self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -424,14 +425,21 @@ class ViewController: UIViewController {
         }
     }
     
+    // Load Data from Adapter
     @IBAction func loadDataFromAdapterButtonClick(sender: AnyObject) {
         if(people == nil) {
             return logError(StringResource.INIT_FIRST_MESSAGE)
         }
         
-        let pull = WLResourceRequest(URL: NSURL(string: "/adapters/JSONStoreAdapter/getPeople"), method: "GET")
-        
-        pull.sendWithDelegate(loadDelegate)
+        let request = WLResourceRequest(URL: NSURL(string: "/adapters/JSONStoreAdapter/getPeople"), method: WLHttpMethodGet)
+        request.sendWithCompletionHandler { (response, error) -> Void in
+            if(error == nil){
+                self.logMessage(response.responseText)
+            }
+            else{
+                self.logError(error.description)
+            }
+        }
     }
     
     @IBAction func getDirtyDocumentsButtonClick(sender: AnyObject) {
@@ -454,21 +462,29 @@ class ViewController: UIViewController {
             return logError(StringResource.INIT_FIRST_MESSAGE)
         }
         
-        do {
-            let dirtyDocs:NSArray = try people.allDirty()
-            
-            let pushData:NSData = NSKeyedArchiver.archivedDataWithRootObject(dirtyDocs)
-            
-            pushDelegate.setDataCollection(people)
-            pushDelegate.setDataList(dirtyDocs)
-            
-            
-            let push = WLResourceRequest(URL: NSURL(string: "/adapters/JSONStoreAdapter/pushPeople"), method: "POST")
-            push.sendWithData(pushData, delegate: pushDelegate)
-            
-        } catch let error as NSError {
-            logError(error.description)
+        let request = WLResourceRequest(URL: NSURL(string: "/adapters/JSONStoreAdapter/pushPeople"), method: WLHttpMethodPost)
+        request.sendWithCompletionHandler { (response, error) -> Void in
+            if(error == nil){
+                //self.logMessage(response.responseText)
+                do {
+                    let dirtyDocs:NSArray = try self.people.allDirty()
+                    let pushData:NSData = NSKeyedArchiver.archivedDataWithRootObject(dirtyDocs)
+                    //push.sendWithData(pushData, delegate: pushDelegate)
+                    try self.people.markDocumentsClean(pushData as [AnyObject])
+                    
+                    self.logMessage(StringResource.PUSH_FINISH_MESSAGE)
+                    //request.setQueryParameterValue(String(pushData), forName: "params")
+                    
+                    
+                } catch let error as NSError {
+                    self.logError(error.description)
+                }
+            }
+            else{
+                self.logError(error.description)
+            }
         }
+
     }
     @IBAction func countAllButtonClick(sender: AnyObject) {
         if(people == nil) {

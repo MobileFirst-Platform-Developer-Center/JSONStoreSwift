@@ -17,8 +17,6 @@
 		CE0BE32A1C6160BE00B04F21 /* JSONStoreSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0BE3291C6160BE00B04F21 /* JSONStoreSwiftUITests.swift */; };
 		CE6744681C73AB1B00A95722 /* mfpclient.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE6744671C73AB1B00A95722 /* mfpclient.plist */; };
 		CE67446B1C73E3C900A95722 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6744691C73E3C900A95722 /* iPad.storyboard */; };
-		CEAA08251C728C1C0050BDEA /* PushDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAA08241C728C1C0050BDEA /* PushDelegate.swift */; };
-		CEAA08271C728D3B0050BDEA /* LoadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAA08261C728D3B0050BDEA /* LoadDelegate.swift */; };
 		CEAB00C61C7128DF001647AA /* StringResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB00C51C7128DF001647AA /* StringResource.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,11 +54,8 @@
 		CE0BE3251C6160BE00B04F21 /* JSONStoreSwift.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSONStoreSwift.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0BE3291C6160BE00B04F21 /* JSONStoreSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONStoreSwiftUITests.swift; sourceTree = "<group>"; };
 		CE0BE32B1C6160BE00B04F21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE2AE5D11C6161B500CBD079 /* BridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		CE6744671C73AB1B00A95722 /* mfpclient.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mfpclient.plist; sourceTree = "<group>"; };
 		CE67446A1C73E3C900A95722 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/iPad.storyboard; sourceTree = "<group>"; };
-		CEAA08241C728C1C0050BDEA /* PushDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushDelegate.swift; sourceTree = "<group>"; };
-		CEAA08261C728D3B0050BDEA /* LoadDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadDelegate.swift; sourceTree = "<group>"; };
 		CEAB00C51C7128DF001647AA /* StringResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringResource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,14 +123,11 @@
 				CE0BE3091C6160BE00B04F21 /* AppDelegate.swift */,
 				CE0BE30B1C6160BE00B04F21 /* ViewController.swift */,
 				CEAB00C51C7128DF001647AA /* StringResource.swift */,
-				CEAA08241C728C1C0050BDEA /* PushDelegate.swift */,
-				CEAA08261C728D3B0050BDEA /* LoadDelegate.swift */,
 				CE0BE30D1C6160BE00B04F21 /* Main.storyboard */,
 				CE6744691C73E3C900A95722 /* iPad.storyboard */,
 				CE0BE3101C6160BE00B04F21 /* Assets.xcassets */,
 				CE0BE3121C6160BE00B04F21 /* LaunchScreen.storyboard */,
 				CE0BE3151C6160BE00B04F21 /* Info.plist */,
-				CE2AE5D11C6161B500CBD079 /* BridgingHeader.h */,
 			);
 			path = JSONStoreSwift;
 			sourceTree = "<group>";
@@ -233,7 +225,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = "IBM";
+				ORGANIZATIONNAME = IBM;
 				TargetAttributes = {
 					CE0BE3051C6160BE00B04F21 = {
 						CreatedOnToolsVersion = 7.2;
@@ -350,9 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEAA08251C728C1C0050BDEA /* PushDelegate.swift in Sources */,
 				CE0BE30C1C6160BE00B04F21 /* ViewController.swift in Sources */,
-				CEAA08271C728D3B0050BDEA /* LoadDelegate.swift in Sources */,
 				CEAB00C61C7128DF001647AA /* StringResource.swift in Sources */,
 				CE0BE30A1C6160BE00B04F21 /* AppDelegate.swift in Sources */,
 			);
@@ -503,6 +493,7 @@
 			baseConfigurationReference = 20C37907AFF8F5BEED437FF3 /* Pods-JSONStoreSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = JSONStoreSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sample.jsonstoreswift;
@@ -517,6 +508,7 @@
 			baseConfigurationReference = 6F9E5E8886B24012E0A6F264 /* Pods-JSONStoreSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = JSONStoreSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sample.jsonstoreswift;

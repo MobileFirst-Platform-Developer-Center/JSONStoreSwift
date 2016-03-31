@@ -5,11 +5,11 @@
 	<key>protocol</key>
 	<string>http</string>
 	<key>host</key>
-	<string></string>
+	<string>9.148.225.81</string>
 	<key>port</key>
-	<string></string>
+	<string>9080</string>
 	<key>wlServerContext</key>
-	<string>/JSONStore/</string>
+	<string>/mfp/</string>
 	<key>languagePreferences</key>
 	<string>en</string>
 </dict>
