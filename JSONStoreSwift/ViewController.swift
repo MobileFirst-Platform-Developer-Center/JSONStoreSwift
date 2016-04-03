@@ -86,22 +86,6 @@ class ViewController: UIViewController {
         logMessage(consoleMessage!)
     }
     
-    func loadDataFromAdapter(data:NSArray) {
-        if(people == nil) {
-            return logError(StringResource.INIT_FIRST_MESSAGE)
-        }
-        
-        do {
-            let change:Int = try Int(people.changeData(data as [AnyObject], withReplaceCriteria: nil, addNew: true, markDirty: false))
-            
-            logMessage(String.init(format: StringResource.LOAD_FROM_ADAPTER_MESSAGE, [change]))
-
-        } catch let error as NSError {
-            logError(error.description)
-        }
-        
-    }
-    
     @IBAction func initializeButtonClick(sender: UIButton!) {
         people = JSONStoreCollection(name: StringResource.COLLECTION_NAME)
         
@@ -425,7 +409,9 @@ class ViewController: UIViewController {
         }
     }
     
-    // Load Data from Adapter
+    //---------------------------------------
+    // Load Data From Adapter ButtonClick
+    //---------------------------------------
     @IBAction func loadDataFromAdapterButtonClick(sender: AnyObject) {
         if(people == nil) {
             return logError(StringResource.INIT_FIRST_MESSAGE)
@@ -434,14 +420,38 @@ class ViewController: UIViewController {
         let request = WLResourceRequest(URL: NSURL(string: "/adapters/JSONStoreAdapter/getPeople"), method: WLHttpMethodGet)
         request.sendWithCompletionHandler { (response, error) -> Void in
             if(error == nil){
-                self.logMessage(response.responseText)
+                //print("response.responseText: \(response.responseText)");
+                let responsePayload:NSDictionary = response.getResponseJson()
+                self.loadDataFromAdapter(responsePayload.objectForKey("peopleList") as! NSArray)
             }
             else{
+                print(error.description);
                 self.logError(error.description)
             }
         }
     }
     
+    //---------------------------------------
+    // Load Data From Adapter
+    //---------------------------------------
+    func loadDataFromAdapter(data:NSArray) {
+        if(people == nil) {
+            return logError(StringResource.INIT_FIRST_MESSAGE)
+        }
+        
+        do {
+            let change:Int = try Int(people.changeData(data as [AnyObject], withReplaceCriteria: nil, addNew: true, markDirty: false))
+            logMessage(String.init(format: StringResource.LOAD_FROM_ADAPTER_MESSAGE, [change]))
+            
+        } catch let error as NSError {
+            logError(error.description)
+        }
+        
+    }
+    
+    //---------------------------------------
+    // Get Dirty Documents
+    //---------------------------------------
     @IBAction func getDirtyDocumentsButtonClick(sender: AnyObject) {
         if(people == nil) {
             return logError(StringResource.INIT_FIRST_MESSAGE)
@@ -457,35 +467,32 @@ class ViewController: UIViewController {
         }
     }
     
+    //---------------------------------------
+    // Push Changes To Adapter
+    //---------------------------------------
     @IBAction func pushChangesToAdapterButtonClick(sender: AnyObject) {
         if(people == nil) {
             return logError(StringResource.INIT_FIRST_MESSAGE)
         }
         
         let request = WLResourceRequest(URL: NSURL(string: "/adapters/JSONStoreAdapter/pushPeople"), method: WLHttpMethodPost)
+        do {
+            let dirtyDocs:NSArray = try self.people.allDirty()
+            //let pushData:NSData = NSKeyedArchiver.archivedDataWithRootObject(dirtyDocs)
+            print("dirtyDocs : \(dirtyDocs.description)");
+            request.setQueryParameterValue(dirtyDocs.description, forName:"params")
+        } catch let error as NSError {
+            self.logError(error.description)
+        }
         request.sendWithCompletionHandler { (response, error) -> Void in
             if(error == nil){
-                //self.logMessage(response.responseText)
-                do {
-                    let dirtyDocs:NSArray = try self.people.allDirty()
-                    let pushData:NSData = NSKeyedArchiver.archivedDataWithRootObject(dirtyDocs)
-                    //push.sendWithData(pushData, delegate: pushDelegate)
-                    try self.people.markDocumentsClean(pushData as [AnyObject])
-                    
-                    self.logMessage(StringResource.PUSH_FINISH_MESSAGE)
-                    //request.setQueryParameterValue(String(pushData), forName: "params")
-                    
-                    
-                } catch let error as NSError {
+                self.logMessage(StringResource.PUSH_FINISH_MESSAGE)
+            } else{
                     self.logError(error.description)
-                }
-            }
-            else{
-                self.logError(error.description)
             }
         }
-
     }
+    
     @IBAction func countAllButtonClick(sender: AnyObject) {
         if(people == nil) {
             return logError(StringResource.INIT_FIRST_MESSAGE)
