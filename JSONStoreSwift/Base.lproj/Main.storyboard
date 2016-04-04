@@ -127,11 +127,6 @@
                                                     <constraint firstAttribute="height" constant="1" id="cho-sC-dKh"/>
                                                 </constraints>
                                             </view>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Field" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qmZ-eo-YQE">
-                                                <rect key="frame" x="8" y="295" width="302" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Limit (optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7e4-gg-Mnl">
                                                 <rect key="frame" x="8" y="333" width="147" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -379,6 +374,11 @@
                                                     <action selector="getFileInfoButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2dL-Le-oeO"/>
                                                 </connections>
                                             </button>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Field" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qmZ-eo-YQE">
+                                                <rect key="frame" x="8" y="295" width="302" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                     </view>
                                 </subviews>

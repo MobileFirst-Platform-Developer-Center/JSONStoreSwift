@@ -384,6 +384,7 @@
                         <outlet property="changePasswordOldTextField" destination="RIJ-SA-nP5" id="o7Y-D4-AO8"/>
                         <outlet property="changePasswordUserTextField" destination="SUe-VU-VWy" id="9mh-cy-9zc"/>
                         <outlet property="consoleTextView" destination="vIx-lr-Wln" id="zlN-Bu-DLn"/>
+                        <outlet property="countNameTextField" destination="5K6-Ev-eHM" id="CWN-3f-UoL"/>
                         <outlet property="enterAgeTextField" destination="DAa-WV-cha" id="mgO-EC-mrD"/>
                         <outlet property="enterNameTextField" destination="SxX-1s-THw" id="aSY-38-Djq"/>
                         <outlet property="findByIdTextField" destination="zGf-st-bbM" id="Xg4-Ls-Qn0"/>
