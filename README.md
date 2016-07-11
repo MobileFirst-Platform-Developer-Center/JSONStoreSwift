@@ -16,6 +16,8 @@ https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/using-the-m
 
 JSONStore adapter: https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAdapter/tree/release80
 
+> **Tip:** you can update the bundled SDK by running the command `pod update` from the project's root folder.
+
 ### Supported Levels
 IBM MobileFirst Platform Foundation 8.0
 
