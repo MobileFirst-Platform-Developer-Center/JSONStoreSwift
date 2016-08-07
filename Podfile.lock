@@ -1,16 +1,18 @@
 PODS:
-  - IBMMobileFirstPlatformFoundation (8.0.157)
-  - IBMMobileFirstPlatformFoundationJSONStore (8.0.157):
+  - IBMMobileFirstPlatformFoundation (8.0.2016070718)
+  - IBMMobileFirstPlatformFoundationJSONStore (8.0.2016070719):
     - IBMMobileFirstPlatformFoundation (~> 8.0)
     - IBMMobileFirstPlatformFoundationOpenSSLUtils (~> 8.0)
-  - IBMMobileFirstPlatformFoundationOpenSSLUtils (8.0.157)
+  - IBMMobileFirstPlatformFoundationOpenSSLUtils (8.0.2016070718)
 
 DEPENDENCIES:
   - IBMMobileFirstPlatformFoundationJSONStore (~> 8.0.0)
 
 SPEC CHECKSUMS:
-  IBMMobileFirstPlatformFoundation: 79376d7df8c1e775b0f3456083d2bda92934ec6d
-  IBMMobileFirstPlatformFoundationJSONStore: 227c197ad3223394b37d199c80c43f719e85a8d2
-  IBMMobileFirstPlatformFoundationOpenSSLUtils: ba9616ec7409952a9415674d3c1cf50b9e28e19a
+  IBMMobileFirstPlatformFoundation: adfc8b080dcb484bc49d37a97863b706f0fb31cb
+  IBMMobileFirstPlatformFoundationJSONStore: f2f879da5fec15042a2d47dffd138c7dfcd6e727
+  IBMMobileFirstPlatformFoundationOpenSSLUtils: 69637a4e099755450a7f88a82c4cd9b3cc04ff20
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 4b4b8600213093c7c31ccff1a56bcdb6e2d450d6
+
+COCOAPODS: 1.0.1
