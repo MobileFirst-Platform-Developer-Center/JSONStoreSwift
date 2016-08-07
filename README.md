@@ -10,8 +10,8 @@ https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/using-the-m
 
 1. Use either Maven, MobileFirst CLI or your IDE of choice to [build and deploy the adapter](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/adapters/creating-adapters/).
 2. From the command-line, navigate to the project's root folder.
-3. Download the CocoaPod dependencies by running the command: `pod install`
-4. Ensure the sample is registered in the MobileFirst Server by running the command: `mfpdev app register`
+3. Download the CocoaPod dependencies by running the commands: `pod update` followed by `pod install`.
+4. Ensure the sample is registered in the MobileFirst Server by running the command: `mfpdev app register`.
 5. Open `JSONStoreiOS.xcworkspace` and run the sample by clicking the **Run** button.
 
 JSONStore adapter: https://github.com/MobileFirst-Platform-Developer-Center/JSONStoreAdapter/tree/release80
