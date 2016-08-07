@@ -1,1 +1,0 @@
-../../../../IBMMobileFirstPlatformFoundationJSONStore/IBMMobileFirstPlatformFoundationJSONStore/Frameworks/IBMMobileFirstPlatformFoundationJSONStore.framework/Headers/JSONStoreAddOptions.h
