@@ -14,8 +14,6 @@
 		CE0BE30F1C6160BE00B04F21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0BE30D1C6160BE00B04F21 /* Main.storyboard */; };
 		CE0BE3111C6160BE00B04F21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0BE3101C6160BE00B04F21 /* Assets.xcassets */; };
 		CE0BE3141C6160BE00B04F21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0BE3121C6160BE00B04F21 /* LaunchScreen.storyboard */; };
-		CE0BE31F1C6160BE00B04F21 /* JSONStoreSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0BE31E1C6160BE00B04F21 /* JSONStoreSwiftTests.swift */; };
-		CE0BE32A1C6160BE00B04F21 /* JSONStoreSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0BE3291C6160BE00B04F21 /* JSONStoreSwiftUITests.swift */; };
 		CE6744681C73AB1B00A95722 /* mfpclient.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE6744671C73AB1B00A95722 /* mfpclient.plist */; };
 		CE67446B1C73E3C900A95722 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6744691C73E3C900A95722 /* iPad.storyboard */; };
 		CEAB00C61C7128DF001647AA /* StringResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB00C51C7128DF001647AA /* StringResource.swift */; };
@@ -55,11 +53,7 @@
 		CE0BE3131C6160BE00B04F21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE0BE3151C6160BE00B04F21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE0BE31A1C6160BE00B04F21 /* JSONStoreSwift.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSONStoreSwift.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE0BE31E1C6160BE00B04F21 /* JSONStoreSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONStoreSwiftTests.swift; sourceTree = "<group>"; };
-		CE0BE3201C6160BE00B04F21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE0BE3251C6160BE00B04F21 /* JSONStoreSwift.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSONStoreSwift.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE0BE3291C6160BE00B04F21 /* JSONStoreSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONStoreSwiftUITests.swift; sourceTree = "<group>"; };
-		CE0BE32B1C6160BE00B04F21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE6744671C73AB1B00A95722 /* mfpclient.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mfpclient.plist; sourceTree = "<group>"; };
 		CE67446A1C73E3C900A95722 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/iPad.storyboard; sourceTree = "<group>"; };
 		CEAB00C51C7128DF001647AA /* StringResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringResource.swift; sourceTree = "<group>"; };
@@ -112,8 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				CE0BE3081C6160BE00B04F21 /* JSONStoreSwift */,
-				CE0BE31D1C6160BE00B04F21 /* JSONStoreSwiftTests */,
-				CE0BE3281C6160BE00B04F21 /* JSONStoreSwiftUITests */,
 				CE0BE3071C6160BE00B04F21 /* Products */,
 				3AF431CB59A888A671A041CC /* Pods */,
 				F9DB893C1CADF8ACF85193AD /* Frameworks */,
@@ -144,24 +136,6 @@
 				CE0BE3151C6160BE00B04F21 /* Info.plist */,
 			);
 			path = JSONStoreSwift;
-			sourceTree = "<group>";
-		};
-		CE0BE31D1C6160BE00B04F21 /* JSONStoreSwiftTests */ = {
-			isa = PBXGroup;
-			children = (
-				CE0BE31E1C6160BE00B04F21 /* JSONStoreSwiftTests.swift */,
-				CE0BE3201C6160BE00B04F21 /* Info.plist */,
-			);
-			path = JSONStoreSwiftTests;
-			sourceTree = "<group>";
-		};
-		CE0BE3281C6160BE00B04F21 /* JSONStoreSwiftUITests */ = {
-			isa = PBXGroup;
-			children = (
-				CE0BE3291C6160BE00B04F21 /* JSONStoreSwiftUITests.swift */,
-				CE0BE32B1C6160BE00B04F21 /* Info.plist */,
-			);
-			path = JSONStoreSwiftUITests;
 			sourceTree = "<group>";
 		};
 		F9DB893C1CADF8ACF85193AD /* Frameworks */ = {
@@ -485,7 +459,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE0BE31F1C6160BE00B04F21 /* JSONStoreSwiftTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,7 +466,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE0BE32A1C6160BE00B04F21 /* JSONStoreSwiftUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
