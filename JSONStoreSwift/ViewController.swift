@@ -26,8 +26,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        consoleTextView.isUserInteractionEnabled = true
-        consoleTextView.isEditable = false
+    consoleTextView.isUserInteractionEnabled = true
+ consoleTextView.isEditable = false
         
         
         //pushDelegate = PushDelegate(controller: self)
@@ -105,6 +105,21 @@ class ViewController: UIViewController {
         logMessage(consoleMessage!)
     }
     
+    
+    //---------------------------------------
+    // Register For Touch ID
+    //---------------------------------------
+    
+    
+    
+      @IBAction func registerButtonClick(_ sender: UIButton!)
+      {
+        
+        
+        self.performSegue(withIdentifier: "ToRegisterPage", sender: nil)
+        
+        
+    }
     //---------------------------------------
     // Initialize
     //---------------------------------------
@@ -543,7 +558,7 @@ class ViewController: UIViewController {
             let dirtyDocs:NSArray = try self.people.allDirty() as NSArray
             print("dirtyDocs : \(dirtyDocs.description)");
             
-            let request = WLResourceRequest(url: URL(string: "/adapters/JSONStoreAdapter/pushPeople"), method: WLHttpMethodPost)
+            let request = WLResourceRequest(url: NSURL(string: "/adapters/JSONStoreAdapter/pushPeople") as URL!, method: WLHttpMethodPost)
             let formParams = ["params": dirtyDocs]
             request?.send(withFormParameters: formParams) { (response, error) -> Void in
                 if(error == nil){
