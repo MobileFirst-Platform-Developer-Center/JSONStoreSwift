@@ -15,6 +15,7 @@
  */
 import UIKit
 import IBMMobileFirstPlatformFoundation
+import IBMMobileFirstPlatformFoundationJSONStore
 
 class ViewController: UIViewController {
     
@@ -25,8 +26,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        consoleTextView.userInteractionEnabled = true
-        consoleTextView.editable = false
+    consoleTextView.isUserInteractionEnabled = true
+ consoleTextView.isEditable = false
         
         
         //pushDelegate = PushDelegate(controller: self)
@@ -40,7 +41,7 @@ class ViewController: UIViewController {
     //---------------------------------------
     // logMessage
     //---------------------------------------
-    func logMessage(message: String) {
+    func logMessage(_ message: String) {
         consoleTextView.textColor = UIColor.init(colorLiteralRed: 1, green: 1, blue: 1, alpha: 1)
         consoleTextView.text = message
         
@@ -50,7 +51,7 @@ class ViewController: UIViewController {
     //---------------------------------------
     // logError
     //---------------------------------------
-    func logError(error:String) {
+    func logError(_ error:String) {
         consoleTextView.textColor = UIColor.init(colorLiteralRed: 0.8, green: 0, blue: 0, alpha: 1)
         consoleTextView.text = error
         
@@ -60,34 +61,34 @@ class ViewController: UIViewController {
     //---------------------------------------
     // resetFieldError
     //---------------------------------------
-    func resetFieldError(field: UITextField) {
+    func resetFieldError(_ field: UITextField) {
         field.layer.cornerRadius = 5.0
         field.layer.masksToBounds = true
-        field.layer.borderColor = UIColor.grayColor().CGColor
+        field.layer.borderColor = UIColor.gray.cgColor
         field.layer.borderWidth = 0.5
     }
 
     //---------------------------------------
     // setTextFieldError
     //---------------------------------------
-    func setTextFieldError(field: UITextField) {
+    func setTextFieldError(_ field: UITextField) {
         field.layer.cornerRadius = 5.0
         field.layer.masksToBounds = true
-        field.layer.borderColor = UIColor.redColor().CGColor
+        field.layer.borderColor = UIColor.red.cgColor
         field.layer.borderWidth = 1.0
     }
     
     //---------------------------------------
     // logResults
     //---------------------------------------
-    func logResults(results: NSArray) {
+    func logResults(_ results: NSArray) {
         logResults(results, message: nil)
     }
     
     //---------------------------------------
     // logResults
     //---------------------------------------
-    func logResults(results: NSArray, message: String?) {
+    func logResults(_ results: NSArray, message: String?) {
         var consoleMessage:String?
         
         if((message?.isEmpty) == nil || message?.characters.count == 0) {
@@ -97,21 +98,36 @@ class ViewController: UIViewController {
         }
         
         for obj in results {
-            consoleMessage = consoleMessage!.stringByAppendingFormat(" %@", obj.description)
+            consoleMessage = consoleMessage!.appendingFormat(" %@", (obj as AnyObject).description)
         }
         
         
         logMessage(consoleMessage!)
     }
     
+    
+    //---------------------------------------
+    // Register For Touch ID
+    //---------------------------------------
+    
+    
+    
+      @IBAction func registerButtonClick(_ sender: UIButton!)
+      {
+        
+        
+        self.performSegue(withIdentifier: "ToRegisterPage", sender: nil)
+        
+        
+    }
     //---------------------------------------
     // Initialize
     //---------------------------------------
-    @IBAction func initializeButtonClick(sender: UIButton!) {
+    @IBAction func initializeButtonClick(_ sender: UIButton!) {
         people = JSONStoreCollection(name: StringResource.COLLECTION_NAME)
         
-        people.setSearchField("name", withType: JSONStore_String)
-        people.setSearchField("age", withType: JSONStore_Integer)
+        people.setSearchField("name", with: JSONStore_String)
+        people.setSearchField("age", with: JSONStore_Integer)
         
         let options = JSONStoreOpenOptions()
 
@@ -122,14 +138,14 @@ class ViewController: UIViewController {
         }
         
         do {
-            try JSONStore.sharedInstance().openCollections([people], withOptions: options)
+            try JSONStore.sharedInstance().openCollections([people], with: options)
 
             logMessage(StringResource.INIT_MESSAGE)
             
             userTextField.text = nil
             passwordTextField.text = nil
         } catch let error as NSError {
-            logMessage(error.description)
+            logMessage(error.debugDescription)
         }
         
     }
@@ -137,7 +153,7 @@ class ViewController: UIViewController {
     //---------------------------------------
     // Close
     //---------------------------------------
-    @IBAction func closeButtonClick(sender: UIButton!) {
+    @IBAction func closeButtonClick(_ sender: UIButton) {
         
         do {
             try JSONStore.sharedInstance().closeAllCollections()
@@ -145,14 +161,14 @@ class ViewController: UIViewController {
             logMessage(StringResource.CLOSE_MESSAGE)
             
         } catch let error as NSError {
-            logError(error.description)
+            logError(error.debugDescription)
         }
     }
 
     //---------------------------------------
     // Destroy
     //---------------------------------------
-    @IBAction func destroyButtonClick(sender: UIButton) {
+    @IBAction func destroyButtonClick(_ sender: UIButton) {
         
         do {
             try JSONStore.sharedInstance().destroyData()
@@ -166,10 +182,10 @@ class ViewController: UIViewController {
     //---------------------------------------
     // Remove Collection
     //---------------------------------------
-    @IBAction func removeCollectionButtonClick(sender: UIButton) {
+    @IBAction func removeCollectionButtonClick(_ sender: UIButton) {
         
         do  {
-            try people.removeCollection()
+            try people.remove()
             
             logMessage(StringResource.REMOVE_COLLECTION_MESSAGE)
         } catch let error as NSError {
@@ -181,7 +197,7 @@ class ViewController: UIViewController {
     //---------------------------------------
     // Add Data
     //---------------------------------------
-    @IBAction func addDataButtonClick(sender: UIButton) {
+    @IBAction func addDataButtonClick(_ sender: UIButton) {
         if(people == nil) {
             return logError(StringResource.INIT_FIRST_MESSAGE)
         }
@@ -190,24 +206,31 @@ class ViewController: UIViewController {
         resetFieldError(enterAgeTextField)
         
         let name:String? = enterNameTextField.text
-        let age:Int? = Int(enterAgeTextField.text!)
+      //let age:Int? = Int(enterAgeTextField.text!)
         
-        if(name?.characters.count == 0 || age <= 0) {
+        guard let age = Int(enterAgeTextField.text!),age > 0
+        else
+        {
+            
+            setTextFieldError(enterAgeTextField)
+            return
+        }
+
+        
+        if((name?.characters.count)! == 0 || age <= 0) {
             if(name?.characters.count == 0) {
                 setTextFieldError(enterNameTextField)
+            
             }
             
-            if(age <= 0) {
-                setTextFieldError(enterAgeTextField)
-            }
             
             return
         }
 
-        let data = ["name" : name!, "age" : age!]
+        let data = ["name" : name!, "age" : age] as [String : Any]
         
         do  {
-            try people.addData([data], andMarkDirty: true, withOptions: nil)
+            try people.addData([data], andMarkDirty: true, with: nil)
             
             logMessage(StringResource.ADD_MESSAGE)
 
@@ -221,7 +244,7 @@ class ViewController: UIViewController {
     //---------------------------------------
     // Find By Name
     //---------------------------------------
-    @IBAction func findByNameButtonClick(sender: UIButton) {
+    @IBAction func findByNameButtonClick(_ sender: UIButton) {
         if(people == nil) {
             return logError(StringResource.INIT_FIRST_MESSAGE)
         }
@@ -229,34 +252,34 @@ class ViewController: UIViewController {
         resetFieldError(searchTextField)
         
         let searchKeyword:String? = searchTextField.text
-        let limit:Int? = Int(limitTextField.text!)
-        let offset:Int? = Int(offsetTextField.text!)
         
-        if(searchKeyword == nil) {
+             if(searchKeyword == nil) {
             return setTextFieldError(searchTextField)
         }
         
         let options:JSONStoreQueryOptions = JSONStoreQueryOptions()
-        options.sortBySearchFieldAscending("name")
-        options.sortBySearchFieldDescending("age")
+        options.sort(bySearchFieldAscending: "name")
+        options.sort(bySearchFieldDescending: "age")
         options.filterSearchField("_id")
         options.filterSearchField("json")
-        
-        if(limit > 0) {
-            options.limit = limit
+        if let limit = Int(limitTextField.text!),limit > 0
+        {
+            options.limit = limit as NSNumber!
         }
+       
         
-        if(offset > 0) {
-            options.offset = offset
+        if let offset = Int(offsetTextField.text!),offset > 0
+        {
+            options.offset = offset as NSNumber!
         }
         
         let query:JSONStoreQueryPart = JSONStoreQueryPart()
         query.searchField("name", like: searchKeyword)
         
         do {
-            let results = try people.findWithQueryParts([query], andOptions: options)
+            let results = try people.find(withQueryParts: [query], andOptions: options)
 
-            logResults(results)
+            logResults(results as NSArray)
         } catch let error as NSError {
             logError(error.description)
         }
@@ -265,7 +288,7 @@ class ViewController: UIViewController {
     //---------------------------------------
     // Find By Age
     //---------------------------------------
-    @IBAction func findByAgeButtonClick(sender: UIButton) {
+    @IBAction func findByAgeButtonClick(_ sender: UIButton) {
         if(people == nil) {
             return logError(StringResource.INIT_FIRST_MESSAGE)
         }
@@ -273,34 +296,35 @@ class ViewController: UIViewController {
         resetFieldError(searchTextField)
         
         let age:Int? = Int(searchTextField.text!)
-        let limit:Int? = Int(limitTextField.text!)
-        let offset:Int? = Int(offsetTextField.text!)
-        
+
         if(age == nil) {
             return setTextFieldError(searchTextField)
         }
         
         let options:JSONStoreQueryOptions = JSONStoreQueryOptions()
-        options.sortBySearchFieldAscending("name")
-        options.sortBySearchFieldDescending("age")
+        options.sort(bySearchFieldAscending: "name")
+        options.sort(bySearchFieldDescending: "age")
         options.filterSearchField("_id")
         options.filterSearchField("json")
         
-        if(limit > 0) {
-            options.limit = limit
+        if let limit = Int(limitTextField.text!),limit > 0
+        {
+            options.limit = limit as NSNumber!
         }
         
-        if(offset > 0) {
-            options.offset = offset
+        
+        if let offset = Int(offsetTextField.text!),offset > 0
+        {
+            options.offset = offset as NSNumber!
         }
         
         let query:JSONStoreQueryPart = JSONStoreQueryPart()
         query.searchField("age", equal: age!.description)
         
         do {
-            let results = try people.findWithQueryParts([query], andOptions: options)
+            let results = try people.find(withQueryParts: [query], andOptions: options)
             
-            logResults(results)
+            logResults(results as NSArray)
         } catch let error as NSError {
             logError(error.description)
         }
@@ -310,65 +334,70 @@ class ViewController: UIViewController {
     //---------------------------------------
     // Find All
     //---------------------------------------
-    @IBAction func findAllButtonClick(sender: UIButton) {
+    @IBAction func findAllButtonClick(_ sender: UIButton) {
         if(people == nil) {
             return logError(StringResource.INIT_FIRST_MESSAGE)
         }
         
         resetFieldError(searchTextField)
 
-        let limit:Int? = Int(limitTextField.text!)
-        let offset:Int? = Int(offsetTextField.text!)
         
         let options:JSONStoreQueryOptions = JSONStoreQueryOptions()
-        options.sortBySearchFieldAscending("name")
-        options.sortBySearchFieldDescending("age")
+        options.sort(bySearchFieldAscending: "name")
+        options.sort(bySearchFieldDescending: "age")
         options.filterSearchField("_id")
         options.filterSearchField("json")
         
-        if(limit > 0) {
-            options.limit = limit
+        if let limit = Int(limitTextField.text!),limit > 0
+        {
+            options.limit = limit as NSNumber!
+        }
+
+        
+        if let offset = Int(offsetTextField.text!),offset > 0
+        {
+            options.offset = offset as NSNumber!
         }
         
-        if(offset > 0) {
-            options.offset = offset
-        }
         
         do {
-            let results = try people.findAllWithOptions(options)
+            let results = try people.findAll(with: options)
             
-            logResults(results)
+            logResults(results as NSArray)
         } catch let error as NSError {
-            logError(error.description)
+            logError(error.debugDescription)
         }
     }
     
     //---------------------------------------
     // Find By Id
     //---------------------------------------
-    @IBAction func findByIdButtonClick(sender: UIButton) {
+    @IBAction func findByIdButtonClick(_ sender: UIButton) {
         if(people == nil) {
             return logError(StringResource.INIT_FIRST_MESSAGE)
         }
         
         resetFieldError(findByIdTextField)
         
-        let id:Int? = Int(findByIdTextField.text!)
+//      let id:Int? = Int(findByIdTextField.text!)
+        // validating if valid text entered.
         
-        if(id < 0) {
+        guard let id = Int(findByIdTextField.text!),id > 0
+        else {
             return setTextFieldError(findByIdTextField)
+           
         }
 
         let options:JSONStoreQueryOptions = JSONStoreQueryOptions()
-        options.sortBySearchFieldAscending("name")
-        options.sortBySearchFieldDescending("age")
+        options.sort(bySearchFieldAscending: "name")
+        options.sort(bySearchFieldDescending: "age")
         options.filterSearchField("_id")
         options.filterSearchField("json")
         
         do {
-            let results = try people.findWithIds([id!], andOptions: options)
+            let results = try people.find(withIds: [id], andOptions: options)
             
-            logResults(results)
+            logResults(results as NSArray)
         } catch let error as NSError {
             logError(error.description)
         }
@@ -377,7 +406,7 @@ class ViewController: UIViewController {
     //---------------------------------------
     // Replace By Id
     //---------------------------------------
-    @IBAction func replaceByIdButtonClick(sender: AnyObject) {
+    @IBAction func replaceByIdButtonClick(_ sender: AnyObject) {
         if(people == nil) {
             return logError(StringResource.INIT_FIRST_MESSAGE)
         }
@@ -386,21 +415,21 @@ class ViewController: UIViewController {
         resetFieldError(replaceNameTextField)
         resetFieldError(replaceAgeTextField)
 
-        let id:Int? = Int(replaceIdTextField.text!)
+       let id:Int? = Int(replaceIdTextField.text!)
         let name:String? = replaceNameTextField.text
         let age:Int? = Int(replaceAgeTextField.text!)
 
         
-        if(name?.characters.count == 0 || age <= 0 || id <= 0) {
+        if((name?.characters.count)! == 0 || age! <= 0 || id! <= 0) {
             if(name?.characters.count == 0) {
                 setTextFieldError(replaceNameTextField)
             }
             
-            if(age <= 0) {
+            if(age! <= 0) {
                 setTextFieldError(replaceAgeTextField)
             }
             
-            if(id <= 0) {
+            if(id! <= 0) {
                 setTextFieldError(replaceIdTextField)
             }
             
@@ -408,13 +437,13 @@ class ViewController: UIViewController {
         }
         
         var document:Dictionary<String,AnyObject> = Dictionary()
-        document["name"] = name
-        document["age"] = age?.description
+        document["name"] = name as AnyObject?
+        document["age"] = age?.description as AnyObject?
         
         
         var replacement:Dictionary<String,AnyObject> = Dictionary()
-        replacement["_id"] = id
-        replacement["json"] = document
+        replacement["_id"] = id as AnyObject?
+        replacement["json"] = document as AnyObject?
 
         do {
             let count:Int = try Int(people.replaceDocuments([replacement], andMarkDirty: true))
@@ -425,58 +454,57 @@ class ViewController: UIViewController {
                 logError(String.init(format: StringResource.NOT_FOUND_MESSAGE, arguments: [id!]))
             }
         } catch let error as NSError {
-            logError(error.description)
+            logError(error.debugDescription)
         }
     }
     
     //---------------------------------------
     // Remove By Id
     //---------------------------------------
-    @IBAction func removeByIdButtonClick(sender: AnyObject) {
+    @IBAction func removeByIdButtonClick(_ sender: AnyObject) {
         if(people == nil) {
             return logError(StringResource.INIT_FIRST_MESSAGE)
         }
 
         resetFieldError(removeIdTextField)
 
-        let id:Int? = Int(removeIdTextField.text!)
         
-        
-        if(id <= 0) {
-            return setTextFieldError(removeIdTextField)
+        guard let id = Int(removeIdTextField.text!),id > 0
+            else {
+                return setTextFieldError(removeIdTextField)
+                
         }
-        
         do {
-            let count:Int = try Int(people.removeWithIds([id!], andMarkDirty: true))
+            let count:Int = try Int(people.remove(withIds: [id], andMarkDirty: true))
             
             if(count > 0) {
-                logMessage(String.init(format: StringResource.REMOVE_MESSAGE, arguments: [id!]))
+                logMessage(String.init(format: StringResource.REMOVE_MESSAGE, arguments: [id]))
             } else {
-                logError(String.init(format: StringResource.NOT_FOUND_MESSAGE, arguments: [id!]))
+                logError(String.init(format: StringResource.NOT_FOUND_MESSAGE, arguments: [id]))
             }
         }
         catch let error as NSError {
-            logError(error.description)
+            logError(error.debugDescription)
         }
     }
     
     //---------------------------------------
     // Load Data From Adapter ButtonClick
     //---------------------------------------
-    @IBAction func loadDataFromAdapterButtonClick(sender: AnyObject) {
+    @IBAction func loadDataFromAdapterButtonClick(_ sender: AnyObject) {
         if(people == nil) {
             return logError(StringResource.INIT_FIRST_MESSAGE)
         }
         
-        let request = WLResourceRequest(URL: NSURL(string: "/adapters/JSONStoreAdapter/getPeople"), method: WLHttpMethodGet)
-        request.sendWithCompletionHandler { (response, error) -> Void in
+        let request = WLResourceRequest(url: URL(string: "/adapters/JSONStoreAdapter/getPeople"), method: WLHttpMethodGet)
+        request?.send { (response, error) -> Void in
             if(error == nil){
-                let responsePayload:NSDictionary = response.getResponseJson()
-                self.loadDataFromAdapter(responsePayload.objectForKey("peopleList") as! NSArray)
+                let responsePayload:NSDictionary = response!.getJson() as NSDictionary
+                self.loadDataFromAdapter(responsePayload.object(forKey: "peopleList") as! NSArray)
             }
             else{
-                print(error.description);
-                self.logError(error.description)
+                print(error.debugDescription);
+                self.logError(error.debugDescription)
             }
         }
     }
@@ -484,7 +512,7 @@ class ViewController: UIViewController {
     //---------------------------------------
     // Load Data From Adapter
     //---------------------------------------
-    func loadDataFromAdapter(data:NSArray) {
+    func loadDataFromAdapter(_ data:NSArray) {
         if(people == nil) {
             return logError(StringResource.INIT_FIRST_MESSAGE)
         }
@@ -494,7 +522,7 @@ class ViewController: UIViewController {
             logMessage("New documents loaded from adapter: \(change)")
             
         } catch let error as NSError {
-            logError(error.description)
+            logError(error.debugDescription)
         }
         
     }
@@ -502,46 +530,46 @@ class ViewController: UIViewController {
     //---------------------------------------
     // Get Dirty Documents
     //---------------------------------------
-    @IBAction func getDirtyDocumentsButtonClick(sender: AnyObject) {
+    @IBAction func getDirtyDocumentsButtonClick(_ sender: AnyObject) {
         if(people == nil) {
             return logError(StringResource.INIT_FIRST_MESSAGE)
         }
 
         do {
-            let dirtyDocs:NSArray = try people.allDirty()
+            let dirtyDocs:NSArray = try people.allDirty() as NSArray
 
             logResults(dirtyDocs)
             
         } catch let error as NSError {
-            logError(error.description)
+            logError(error.debugDescription)
         }
     }
     
     //---------------------------------------
     // Push Changes To Adapter ButtonClick
     //---------------------------------------
-    @IBAction func pushChangesToAdapterButtonClick(sender: AnyObject) {
+    @IBAction func pushChangesToAdapterButtonClick(_ sender: AnyObject) {
         if(people == nil) {
             return logError(StringResource.INIT_FIRST_MESSAGE)
         }
         
         
         do {
-            let dirtyDocs:NSArray = try self.people.allDirty()
+            let dirtyDocs:NSArray = try self.people.allDirty() as NSArray
             print("dirtyDocs : \(dirtyDocs.description)");
             
-            let request = WLResourceRequest(URL: NSURL(string: "/adapters/JSONStoreAdapter/pushPeople"), method: WLHttpMethodPost)
+            let request = WLResourceRequest(url: NSURL(string: "/adapters/JSONStoreAdapter/pushPeople") as URL!, method: WLHttpMethodPost)
             let formParams = ["params": dirtyDocs]
-            request.sendWithFormParameters(formParams) { (response, error) -> Void in
+            request?.send(withFormParameters: formParams) { (response, error) -> Void in
                 if(error == nil){
                     self.pushChangesToAdapter(dirtyDocs)
                 }
                 else{
-                    NSLog(error.description)
+                    NSLog(error.debugDescription)
                 }
             }
         } catch let error as NSError {
-            self.logError(error.description)
+            self.logError(error.debugDescription)
         }
         
     }
@@ -549,19 +577,19 @@ class ViewController: UIViewController {
     //---------------------------------------
     // Push Changes To Adapter
     //---------------------------------------
-    func pushChangesToAdapter(data:NSArray){
+    func pushChangesToAdapter(_ data:NSArray){
         do{
             try self.people.markDocumentsClean(data as [AnyObject])
             self.logMessage(StringResource.PUSH_FINISH_MESSAGE)
         } catch let error as NSError {
-            self.logError(error.description)
+            self.logError(error.debugDescription)
         }
     }
     
     //---------------------------------------
     // Count All
     //---------------------------------------
-    @IBAction func countAllButtonClick(sender: AnyObject) {
+    @IBAction func countAllButtonClick(_ sender: AnyObject) {
         if(people == nil) {
             return logError(StringResource.INIT_FIRST_MESSAGE)
         }
@@ -570,14 +598,14 @@ class ViewController: UIViewController {
             let countAllByName:Int? = try Int(people.countAllDocuments())
             logMessage(String.init(format: StringResource.COUNT_ALL_MESSAGE, arguments: [countAllByName!]))
         } catch let error as NSError {
-            logError(error.description)
+            logError(error.debugDescription)
         }
     }
     
     //---------------------------------------
     // Count By Name
     //---------------------------------------
-    @IBAction func countByNameButtonClick(sender: AnyObject) {
+    @IBAction func countByNameButtonClick(_ sender: AnyObject) {
         if(people == nil) {
             return logError(StringResource.INIT_FIRST_MESSAGE)
         }
@@ -593,17 +621,17 @@ class ViewController: UIViewController {
         query.searchField("name", equal:searchName)
         
         do {
-            let countAllByName:Int? = try Int(people.countWithQueryParts([query]))
+            let countAllByName:Int? = try Int(people.count(withQueryParts: [query]))
             logMessage("Documents in the collection with name(\(searchName)) : \(countAllByName!)")
         } catch let error as NSError {
-            logError(error.description)
+            logError(error.debugDescription)
         }
     }
     
     //---------------------------------------
     // Change Password
     //---------------------------------------
-    @IBAction func changePasswordButtonClick(sender: AnyObject) {
+    @IBAction func changePasswordButtonClick(_ sender: AnyObject) {
         if(people == nil) {
             return logError(StringResource.INIT_FIRST_MESSAGE)
         }
@@ -626,20 +654,20 @@ class ViewController: UIViewController {
             changePasswordNewTextField.text = nil
             changePasswordUserTextField.text = nil
         } catch let error as NSError {
-            logError(error.description)
+            logError(error.debugDescription)
         }
     }
     
     //---------------------------------------
     // Get File Info
     //---------------------------------------
-    @IBAction func getFileInfoButtonClick(sender: AnyObject) {
+    @IBAction func getFileInfoButtonClick(_ sender: AnyObject) {
         do {
             let info = try JSONStore.sharedInstance().fileInfo()
             
-            logResults(info, message: StringResource.FILE_INFO)
+            logResults(info as NSArray, message: StringResource.FILE_INFO)
         } catch let error as NSError {
-            logError(error.description)
+            logError(error.debugDescription)
         }
     }
 

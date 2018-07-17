@@ -33,4 +33,7 @@ class StringResource {
     static var COUNT_ALL_BY_NAME_MESSAGE:String = "Documents in the collection with name(%) : %d"
     static var PASSWORD_CHANGE_MESSAGE:String = "Password changed successfully"
     static var FILE_INFO:String = "FileInfo"
+    static var DEFAULT_LIMIT:String = "0"
+    static var DEFAULT_OFFSET:String = "0"
+    
 }

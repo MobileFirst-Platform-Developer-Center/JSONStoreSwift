@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		4463067A4FB400F89E6C7D6E /* Pods_JSONStoreSwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8D38ED9EF4C36DD759CFEB /* Pods_JSONStoreSwiftUITests.framework */; };
 		AEFBBC1E6E39CAF6B0746BA8 /* Pods_JSONStoreSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 236C221AF827B3223DE0BF3A /* Pods_JSONStoreSwiftTests.framework */; };
+		B794C09620E5DED900098282 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = B794C09520E5DED900098282 /* Register.swift */; };
+		B794C09920E5DF3F00098282 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B794C09720E5DF3E00098282 /* KeychainItemAccessibility.swift */; };
+		B794C09A20E5DF3F00098282 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B794C09820E5DF3F00098282 /* KeychainWrapper.swift */; };
 		CE0BE30A1C6160BE00B04F21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0BE3091C6160BE00B04F21 /* AppDelegate.swift */; };
 		CE0BE30C1C6160BE00B04F21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0BE30B1C6160BE00B04F21 /* ViewController.swift */; };
 		CE0BE30F1C6160BE00B04F21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0BE30D1C6160BE00B04F21 /* Main.storyboard */; };
@@ -47,6 +50,9 @@
 		71F9E0465C1DB13791F3B0B2 /* Pods-JSONStoreSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONStoreSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JSONStoreSwiftTests/Pods-JSONStoreSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		80F23B17A2FAA20DBDAB50B5 /* Pods-JSONStoreSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONStoreSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JSONStoreSwiftTests/Pods-JSONStoreSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A30F8B2C1EF6C98264C7DFAB /* Pods_JSONStoreSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JSONStoreSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B794C09520E5DED900098282 /* Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		B794C09720E5DF3E00098282 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
+		B794C09820E5DF3F00098282 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeychainWrapper.swift; path = ../../../.Trash/KeychainWrapper.swift; sourceTree = "<group>"; };
 		CE0BE3061C6160BE00B04F21 /* JSONStoreSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSONStoreSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0BE3091C6160BE00B04F21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE0BE30B1C6160BE00B04F21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -136,9 +142,12 @@
 				CE6744671C73AB1B00A95722 /* mfpclient.plist */,
 				CE0BE3091C6160BE00B04F21 /* AppDelegate.swift */,
 				CE0BE30B1C6160BE00B04F21 /* ViewController.swift */,
+				B794C09520E5DED900098282 /* Register.swift */,
 				CEAB00C51C7128DF001647AA /* StringResource.swift */,
 				CE0BE30D1C6160BE00B04F21 /* Main.storyboard */,
 				CE6744691C73E3C900A95722 /* iPad.storyboard */,
+				B794C09720E5DF3E00098282 /* KeychainItemAccessibility.swift */,
+				B794C09820E5DF3F00098282 /* KeychainWrapper.swift */,
 				CE0BE3101C6160BE00B04F21 /* Assets.xcassets */,
 				CE0BE3121C6160BE00B04F21 /* LaunchScreen.storyboard */,
 				CE0BE3151C6160BE00B04F21 /* Info.plist */,
@@ -205,8 +214,6 @@
 				CE0BE3161C6160BE00B04F21 /* Sources */,
 				CE0BE3171C6160BE00B04F21 /* Frameworks */,
 				CE0BE3181C6160BE00B04F21 /* Resources */,
-				B89502C30A3A712BB4AE9599 /* [CP] Embed Pods Frameworks */,
-				37F95821028F18A12874330B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -226,7 +233,6 @@
 				CE0BE3211C6160BE00B04F21 /* Sources */,
 				CE0BE3221C6160BE00B04F21 /* Frameworks */,
 				CE0BE3231C6160BE00B04F21 /* Resources */,
-				54715812A794A85BF497660C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -245,18 +251,22 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = IBM;
 				TargetAttributes = {
 					CE0BE3051C6160BE00B04F21 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0930;
+						ProvisioningStyle = Manual;
 					};
 					CE0BE3191C6160BE00B04F21 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0930;
 						TestTargetID = CE0BE3051C6160BE00B04F21;
 					};
 					CE0BE3241C6160BE00B04F21 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0930;
 						TestTargetID = CE0BE3051C6160BE00B04F21;
 					};
 				};
@@ -317,9 +327,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-JSONStoreSwift/Pods-JSONStoreSwift-frameworks.sh",
+				"${PODS_ROOT}/IBMMobileFirstPlatformFoundation/IBMMobileFirstPlatformFoundation/Frameworks/IBMMobileFirstPlatformFoundation.framework",
+				"${PODS_ROOT}/IBMMobileFirstPlatformFoundationOpenSSLUtils/IBMMobileFirstPlatformFoundation/Frameworks/IBMMobileFirstPlatformFoundationOpenSSLUtils.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBMMobileFirstPlatformFoundation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBMMobileFirstPlatformFoundationOpenSSLUtils.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -332,43 +347,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JSONStoreSwift-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		37F95821028F18A12874330B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JSONStoreSwiftTests/Pods-JSONStoreSwiftTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		54715812A794A85BF497660C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JSONStoreSwiftUITests/Pods-JSONStoreSwiftUITests-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5A2A275A73D5234064D62C19 /* [CP] Copy Pods Resources */ = {
@@ -377,9 +365,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-JSONStoreSwift/Pods-JSONStoreSwift-resources.sh",
+				"${PODS_ROOT}/IBMMobileFirstPlatformFoundation/IBMMobileFirstPlatformFoundation/Resources/Localizations.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Localizations.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -392,28 +383,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JSONStoreSwiftUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		B89502C30A3A712BB4AE9599 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JSONStoreSwiftTests/Pods-JSONStoreSwiftTests-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D080BB1ABF4A604BAEECDC88 /* [CP] Check Pods Manifest.lock */ = {
@@ -422,13 +401,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JSONStoreSwiftTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -440,6 +422,9 @@
 			files = (
 				CE0BE30C1C6160BE00B04F21 /* ViewController.swift in Sources */,
 				CEAB00C61C7128DF001647AA /* StringResource.swift in Sources */,
+				B794C09620E5DED900098282 /* Register.swift in Sources */,
+				B794C09A20E5DF3F00098282 /* KeychainWrapper.swift in Sources */,
+				B794C09920E5DF3F00098282 /* KeychainItemAccessibility.swift in Sources */,
 				CE0BE30A1C6160BE00B04F21 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,13 +496,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -544,6 +539,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -555,13 +551,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -580,6 +586,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -589,12 +597,17 @@
 			baseConfigurationReference = E62002AB742A33EB1DD9F046 /* Pods-JSONStoreSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = JSONStoreSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sample.jsonstoreswift;
 				PRODUCT_NAME = JSONStoreSwift;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/JSONStoreSwift/BridgingHeader.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -604,12 +617,17 @@
 			baseConfigurationReference = 15C26250308683B514DFCE49 /* Pods-JSONStoreSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = JSONStoreSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sample.jsonstoreswift;
 				PRODUCT_NAME = JSONStoreSwift;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/JSONStoreSwift/BridgingHeader.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -623,6 +641,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.mobilefirst.JSONStoreSwiftTests;
 				PRODUCT_NAME = JSONStoreSwift;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JSONStoreSwift.app/JSONStoreSwift";
 			};
 			name = Debug;
@@ -636,6 +655,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.mobilefirst.JSONStoreSwiftTests;
 				PRODUCT_NAME = JSONStoreSwift;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JSONStoreSwift.app/JSONStoreSwift";
 			};
 			name = Release;
@@ -648,6 +668,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.mobilefirst.JSONStoreSwiftUITests;
 				PRODUCT_NAME = JSONStoreSwift;
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = JSONStoreSwift;
 				USES_XCTRUNNER = YES;
 			};
@@ -661,6 +682,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.mobilefirst.JSONStoreSwiftUITests;
 				PRODUCT_NAME = JSONStoreSwift;
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = JSONStoreSwift;
 				USES_XCTRUNNER = YES;
 			};
