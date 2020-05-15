@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     // logMessage
     //---------------------------------------
     func logMessage(_ message: String) {
-        consoleTextView.textColor = UIColor.init(colorLiteralRed: 1, green: 1, blue: 1, alpha: 1)
+        consoleTextView.textColor = UIColor.init(red: 1, green: 1, blue: 1, alpha: 1)
         consoleTextView.text = message
         
         self.view.endEditing(true)
@@ -52,7 +52,7 @@ class ViewController: UIViewController {
     // logError
     //---------------------------------------
     func logError(_ error:String) {
-        consoleTextView.textColor = UIColor.init(colorLiteralRed: 0.8, green: 0, blue: 0, alpha: 1)
+        consoleTextView.textColor = UIColor.init(red: 0.8, green: 0, blue: 0, alpha: 1)
         consoleTextView.text = error
         
         self.view.endEditing(true)
@@ -91,7 +91,7 @@ class ViewController: UIViewController {
     func logResults(_ results: NSArray, message: String?) {
         var consoleMessage:String?
         
-        if((message?.isEmpty) == nil || message?.characters.count == 0) {
+        if((message?.isEmpty) == nil || message?.count == 0) {
             consoleMessage = String.init(format: "Results: %d\n", arguments: [results.count])
         } else {
             consoleMessage = String.init(format: "%@:\n", arguments: [message!])
@@ -123,7 +123,7 @@ class ViewController: UIViewController {
         }
         
         do {
-            try JSONStore.sharedInstance().openCollections([people], with: options)
+            try JSONStore.sharedInstance().openCollections([people!], with: options)
 
             logMessage(StringResource.INIT_MESSAGE)
             
@@ -202,8 +202,8 @@ class ViewController: UIViewController {
         }
 
         
-        if((name?.characters.count)! == 0 || age <= 0) {
-            if(name?.characters.count == 0) {
+        if((name?.count)! == 0 || age <= 0) {
+            if(name?.count == 0) {
                 setTextFieldError(enterNameTextField)
             
             }
@@ -249,13 +249,13 @@ class ViewController: UIViewController {
         options.filterSearchField("json")
         if let limit = Int(limitTextField.text!),limit > 0
         {
-            options.limit = limit as NSNumber!
+            options.limit = limit as NSNumber?
         }
        
         
         if let offset = Int(offsetTextField.text!),offset > 0
         {
-            options.offset = offset as NSNumber!
+            options.offset = offset as NSNumber?
         }
         
         let query:JSONStoreQueryPart = JSONStoreQueryPart()
@@ -294,13 +294,13 @@ class ViewController: UIViewController {
         
         if let limit = Int(limitTextField.text!),limit > 0
         {
-            options.limit = limit as NSNumber!
+            options.limit = limit as NSNumber?
         }
         
         
         if let offset = Int(offsetTextField.text!),offset > 0
         {
-            options.offset = offset as NSNumber!
+            options.offset = offset as NSNumber?
         }
         
         let query:JSONStoreQueryPart = JSONStoreQueryPart()
@@ -335,13 +335,13 @@ class ViewController: UIViewController {
         
         if let limit = Int(limitTextField.text!),limit > 0
         {
-            options.limit = limit as NSNumber!
+            options.limit = limit as NSNumber?
         }
 
         
         if let offset = Int(offsetTextField.text!),offset > 0
         {
-            options.offset = offset as NSNumber!
+            options.offset = offset as NSNumber?
         }
         
         
@@ -405,8 +405,8 @@ class ViewController: UIViewController {
         let age:Int? = Int(replaceAgeTextField.text!)
 
         
-        if((name?.characters.count)! == 0 || age! <= 0 || id! <= 0) {
-            if(name?.characters.count == 0) {
+        if((name?.count)! == 0 || age! <= 0 || id! <= 0) {
+            if(name?.count == 0) {
                 setTextFieldError(replaceNameTextField)
             }
             
@@ -431,7 +431,7 @@ class ViewController: UIViewController {
         replacement["json"] = document as AnyObject?
 
         do {
-            let count:Int = try Int(people.replaceDocuments([replacement], andMarkDirty: true))
+            let count:Int = try Int(truncating: people.replaceDocuments([replacement], andMarkDirty: true))
 
             if(count > 0) {
                 logMessage(String.init(format: StringResource.REPLACE_MESSAGE, arguments: [id!]))
@@ -460,7 +460,7 @@ class ViewController: UIViewController {
                 
         }
         do {
-            let count:Int = try Int(people.remove(withIds: [id], andMarkDirty: true))
+            let count:Int = try Int(truncating: people.remove(withIds: [id], andMarkDirty: true))
             
             if(count > 0) {
                 logMessage(String.init(format: StringResource.REMOVE_MESSAGE, arguments: [id]))
@@ -503,7 +503,7 @@ class ViewController: UIViewController {
         }
         
         do {
-            let change:Int = try Int(people.changeData(data as [AnyObject], withReplaceCriteria: nil, addNew: true, markDirty: false))
+            let change:Int = try Int(truncating: people.changeData(data as [AnyObject], withReplaceCriteria: nil, addNew: true, markDirty: false))
             logMessage("New documents loaded from adapter: \(change)")
             
         } catch let error as NSError {
@@ -580,7 +580,7 @@ class ViewController: UIViewController {
         }
         
         do {
-            let countAllByName:Int? = try Int(people.countAllDocuments())
+            let countAllByName:Int? = try Int(truncating: people.countAllDocuments())
             logMessage(String.init(format: StringResource.COUNT_ALL_MESSAGE, arguments: [countAllByName!]))
         } catch let error as NSError {
             logError(error.debugDescription)
@@ -606,7 +606,7 @@ class ViewController: UIViewController {
         query.searchField("name", equal:searchName)
         
         do {
-            let countAllByName:Int? = try Int(people.count(withQueryParts: [query]))
+            let countAllByName:Int? = try Int(truncating: people.count(withQueryParts: [query]))
             logMessage("Documents in the collection with name(\(searchName)) : \(countAllByName!)")
         } catch let error as NSError {
             logError(error.debugDescription)
@@ -623,7 +623,7 @@ class ViewController: UIViewController {
         
         var username:String? = changePasswordUserTextField.text
         
-        if(username?.characters.count == 0) {
+        if(username?.count == 0) {
             username = StringResource.DEFAULT_USERNAME
         }
         

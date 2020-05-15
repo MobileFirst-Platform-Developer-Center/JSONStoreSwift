@@ -1,24 +1,24 @@
 PODS:
-  - IBMMobileFirstPlatformFoundation (8.0.2018111416)
-  - IBMMobileFirstPlatformFoundationJSONStore (8.0.2018071512):
+  - IBMMobileFirstPlatformFoundation (8.0.2020032408)
+  - IBMMobileFirstPlatformFoundationJSONStore (8.0.2020021915):
     - IBMMobileFirstPlatformFoundation (~> 8.0)
     - IBMMobileFirstPlatformFoundationOpenSSLUtils (~> 8.0)
-  - IBMMobileFirstPlatformFoundationOpenSSLUtils (8.0.2018111416)
+  - IBMMobileFirstPlatformFoundationOpenSSLUtils (8.0.2020032408)
 
 DEPENDENCIES:
-  - IBMMobileFirstPlatformFoundationJSONStore (~> 8.0.0)
+  - IBMMobileFirstPlatformFoundationJSONStore
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - IBMMobileFirstPlatformFoundation
     - IBMMobileFirstPlatformFoundationJSONStore
     - IBMMobileFirstPlatformFoundationOpenSSLUtils
 
 SPEC CHECKSUMS:
-  IBMMobileFirstPlatformFoundation: 374872f2bede564f1b755e2ad34c71ef3406af9a
-  IBMMobileFirstPlatformFoundationJSONStore: 240ff5ad2fb744b50151702d40bc27b10d6f321d
-  IBMMobileFirstPlatformFoundationOpenSSLUtils: d38275ead78ee04b5d3e2a0a1ff6763357755fc6
+  IBMMobileFirstPlatformFoundation: 7b47eb132e3b3c1aaca27f1cef11090347c01798
+  IBMMobileFirstPlatformFoundationJSONStore: 9b232a6438c3e6112f031b67675bc1d3c9dc54ca
+  IBMMobileFirstPlatformFoundationOpenSSLUtils: 24a4984a0b89a770bf3c92365def165c189c3f03
 
-PODFILE CHECKSUM: 4b4b8600213093c7c31ccff1a56bcdb6e2d450d6
+PODFILE CHECKSUM: a407861685e2ceb5ac1067dfd3c50b396aac6f7f
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.9.1

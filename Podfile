@@ -1,13 +1,6 @@
 use_frameworks!
 
+platform :ios, 9.0
 target 'JSONStoreSwift' do
-    pod 'IBMMobileFirstPlatformFoundationJSONStore', '~> 8.0.0'
-end
-
-target 'JSONStoreSwiftTests' do
-
-end
-
-target 'JSONStoreSwiftUITests' do
-
+    pod 'IBMMobileFirstPlatformFoundationJSONStore'
 end
